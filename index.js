@@ -1,7 +1,7 @@
 //importing electron library
 const electron = require("electron");
 
-const { app } = electron; //getting app property
+const { app, BrowserWindow } = electron; //getting app property
 
 /*
 -----------electron process----------
@@ -20,5 +20,5 @@ app closes down
 
 //running when app is ready to start doing things
 app.on("ready", () => {
-  console.log("APp is now ready");
+  new BrowserWindow({}); // start a new broswer window
 });
