@@ -20,5 +20,6 @@ app closes down
 
 //running when app is ready to start doing things
 app.on("ready", () => {
-  new BrowserWindow({}); // start a new broswer window
+  const mainWindow = new BrowserWindow({}); // start a new broswer window
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
 });
