@@ -7,6 +7,19 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>This is html page</h1>
+    <h1>Video Info</h1>
+    <form>
+      <div>
+        <label>Select a Video</label>
+        <input type="file" accept="video/*" />
+      </div>
+      <button type="submit">Get Info</button>
+    </form>
+
+    <script>
+      document.querySelector("form").addEventListener("submit", (event) => {
+        event.preventDefault();
+      });
+    </script>
   </body>
 </html>
