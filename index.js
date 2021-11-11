@@ -1,5 +1,5 @@
 //importing electron library
-const electron = reuire("electron");
+const electron = require("electron");
 
 const { app } = electron; //getting app property
 
