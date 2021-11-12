@@ -16,15 +16,22 @@
       <button type="submit">Get Info</button>
     </form>
 
+    <h1 id="result"></h1>
+
     <script>
       const electron = require("electron"); //common module system used by nodejs
       const { ipcRenderer } = electron;
 
       document.querySelector("form").addEventListener("submit", (event) => {
         event.preventDefault();
-
         const { path } = document.querySelector("input").files[0];
         ipcRenderer.send("video:submit", path);
+      });
+
+      ipcRenderer.on("video:metadata", (event, duration) => {
+        document.querySelector(
+          "#result"
+        ).innerHTML = `video is ${duration} seconds long`;
       });
     </script>
   </body>
