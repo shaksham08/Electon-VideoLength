@@ -1,7 +1,7 @@
 //importing electron library
 const electron = require("electron");
 
-const { app, BrowserWindow } = electron; //getting app property
+const { app, BrowserWindow, ipcMain } = electron; //getting app property
 
 /*
 -----------electron process----------
@@ -23,3 +23,5 @@ app.on("ready", () => {
   const mainWindow = new BrowserWindow({}); // start a new broswer window
   mainWindow.loadURL(`file://${__dirname}/index.html`);
 });
+
+ipcMain.on("video:submit", () => {});
